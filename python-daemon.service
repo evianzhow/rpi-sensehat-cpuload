@@ -1,0 +1,14 @@
+[Unit]
+Description=Python Daemon Service
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/pi/rpi-sensehat-cpuload/main.py
+WorkingDirectory=/home/pi/rpi-sensehat-cpuload/
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
